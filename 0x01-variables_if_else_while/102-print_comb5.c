@@ -32,7 +32,10 @@ int main(void)
 						if (i == 57 && j == 56)
 							putchar('\n');
 						else
+						{
 							putchar(',');
+							putchar(' ');
+						}
 					}
 				}
 			}
