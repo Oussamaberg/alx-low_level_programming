@@ -8,12 +8,13 @@
 int main(void)
 {
 	int i = 0;
-	char* String = "_putchar";
-	while(String[i] != '\0')
+	char *String = "_putchar";
+
+	while (String[i] != '\0')
 	{
 		_putchar(String[i]);
 		i++;
 	}
 	_putchar('\n');
-	return 0;
+	return (0);
 }
