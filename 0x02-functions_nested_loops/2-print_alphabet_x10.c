@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include "1-alphabet.c"
 #include "main.h"
 
 /**
@@ -15,7 +16,6 @@ void print_alphabet_x10(void)
 	{
 		print_alphabet();
 		i++;
-		_putchar('\n');
 	}
 
 }
