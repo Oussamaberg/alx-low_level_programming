@@ -4,7 +4,7 @@
 /**
  * print_alphabet_x10 - prints the alphabet,
  * in lowercase 10 times,
- * followed by a new line.
+ i* followed by a new line.
  * Return: On success void.
  **/
 void print_alphabet_x10(void)
@@ -15,6 +15,7 @@ void print_alphabet_x10(void)
 	{
 		print_alphabet();
 		c++;
+		_putchar('\n');
 	}
-	_putchar('\n');
+
 }
