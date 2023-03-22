@@ -19,7 +19,10 @@ void print_times_table(int n)
 		i = 0;
 		num = 0;
 		_putchar('0');
-		_putchar(',');
+		if(n == 0)
+			_putchar('\n');
+		else
+			_putchar(',');
 		while (i < n)
 		{
 			num = num + times;
@@ -40,7 +43,7 @@ void print_times_table(int n)
 				_putchar((num / 10) % 10 + '0');
 				_putchar(num % 10 + '0');
 			}
-			if (i == n - 1 || n == 0)
+			if (i == n - 1)
 				_putchar('\n');
 			else
 			{
