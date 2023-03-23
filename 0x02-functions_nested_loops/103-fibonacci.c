@@ -18,6 +18,7 @@ int main(void)
 		c = a + b;
 		if (c % 2 == 0)
 			sum = sum + c;
+		printf("%ld",sum);
 		a = b;
 		b = c;
 	}
