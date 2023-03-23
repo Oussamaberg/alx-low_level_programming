@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * _isupper - checks if c is uppercase.
  * @c: The character to check
@@ -6,8 +7,8 @@
  */
 int _isupper(int c)
 {
-	if (c >= 'A' && <= 'Z')
-		return (1)
+	if (c >= 'A' && c <= 'Z')
+		return (1);
 	else
-		return (0)
+		return (0);
 }
