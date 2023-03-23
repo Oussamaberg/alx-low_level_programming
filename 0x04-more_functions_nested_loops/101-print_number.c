@@ -16,23 +16,9 @@ void print_number(int n)
 	}
 	while (MAX > 1)
 	{
-		if ((n / MAX) > 1)
+		if ((n / MAX) >= 1)
 			_putchar((n / MAX) % 10 + '0');
 		MAX = MAX / 10;
 	}
 	_putchar((n % 10) + '0');
-}
-int main(void)
-{
-    print_number(10000);
-    _putchar('\n');
-    print_number(1000);
-    _putchar('\n');
-    print_number(100);
-    _putchar('\n');
-    print_number(10);
-    _putchar('\n');
-    print_number(0);
-    _putchar('\n');
-    return (0);
 }
