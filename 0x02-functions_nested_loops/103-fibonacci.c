@@ -10,21 +10,18 @@ int main(void)
 	long a = 1;
 	long b = 2;
 	long c;
-	int i = 2;
+	long sum = 2;
+	int max_val = 4000000;
 
-	printf("%ld, %ld, ", a, b);
-	while (i < 50)
+	while (c < max_val)
 	{
 		c = a + b;
-		if (i == 49)
-			printf("%ld", c);
-		else
-			printf("%ld, ", c);
+		if (sum % 2 == 0)
+			sum = sum + c;
 		a = b;
 		b = c;
-		i++;
 	}
-	printf("\n");
+	printf("%ld\n", sum);
 
 	return (0);
 }
