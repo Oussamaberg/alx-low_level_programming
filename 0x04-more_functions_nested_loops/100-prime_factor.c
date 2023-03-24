@@ -1,42 +1,23 @@
 #include "main.h"
 #include <stdio.h>
+#include <math.h>
+
 /**
- * print_number - print an integer n.
- * @n: The integer to print
- *
- * 
+ * main - print the biggest prime factor.
+ *Return: always 0.
  */
 int main(void)
 {
 	long n = 612852475143;
 	long i;
-	long j;
-	int flag;
 
-	for(i = n / 2; i > 1 ; i-- )
+	for (i = 2; i < sqrt(n); i++)
 	{
-		flag = 0;
-		if ( n % i == 0)
+		while (n % i == 0)
 		{
-			for(j = i / 2 ; j > 2; j--)
-			{
-				if (i % j == 0)
-				{
-					flag = 1;
-					break;
-				}
-			}
-
-		
-			if (flag == 0)
-			{
-				printf("%ld\n", i);
-				break;
-			}
-		//	printf("%ld\n", i);
-			
+			n = n / i;
 		}
-		printf("%ld\n", i);
 	}
+	printf("%ld\n", n);
 	return (0);
 }
