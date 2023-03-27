@@ -21,13 +21,3 @@ char *_strcpy(char *dest, char *src)
 	}
 	return (dest);
 }
-int main(void)
-{
-	    char s1[98];
-	        char *ptr;
-
-		    ptr = _strcpy(s1, "hek lala mama");
-		        printf("%s\n", s1);
-			    printf("%s\n", ptr);
-			        return (0);
-}
