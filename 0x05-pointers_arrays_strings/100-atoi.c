@@ -33,7 +33,8 @@ int _atoi(char *s)
 		for (; i >= start; i--)
 		{
 			num = num + (s[i] - '0') * n;
-			n = n * 10;
+			if (n < 1000000000)
+				n = n * 10;
 		}
 	return (minus * num);
 }
