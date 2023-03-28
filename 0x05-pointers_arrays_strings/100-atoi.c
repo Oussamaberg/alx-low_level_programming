@@ -32,9 +32,9 @@ int _atoi(char *s)
 	if (flag == 1)
 		for (; i >= start; i--)
 		{
-			num = num + (s[i] - '0') * n;
+			num = num + (s[i] - '0') * n * minus;
 			if (n < 1000000000)
 				n = n * 10;
 		}
-	return (minus * num);
+	return (num);
 }
