@@ -8,29 +8,32 @@
  */
 int _atoi(char *s)
 {
-	int n = 100000000;
-	int i = 0;
+	int start;
+	int end;
 	int num = 0;
-	int flag = 0;
 	int minus = 1;
+	int i = 0;
+	int n = 1;
+	int flag = 0;
 
 	while (s[i] != '\0')
 	{
 		if (s[i] == '-')
 			minus = minus * -1;
-		if (s[i] <= '9' && s[i] >= '0')
+		if ((s[i] <= '9' && s[i] >= '0') && flag == 0)
 		{
-			num = num + ((s[i] - '0') * n);
-			n = n / 10;
+			start = i;
 			flag = 1;
 		}
 		if (flag == 1 && (s[i] > '9' || s[i] < '0'))
 			break;
 		i++;
 	}
-	if (n == 0)
-		n = 1;
-	else
+	i--;
+	for (; i >= start; i--)
+	{
+		num = num + (s[i] - '0') * n;
 		n = n * 10;
-	return (minus * (num / n));
+	}
+	return (minus * num);
 }
