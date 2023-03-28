@@ -9,7 +9,6 @@
 int _atoi(char *s)
 {
 	int start;
-	int end;
 	int num = 0;
 	int minus = 1;
 	int i = 0;
