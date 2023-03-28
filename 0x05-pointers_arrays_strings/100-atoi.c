@@ -37,13 +37,3 @@ int _atoi(char *s)
 		}
 	return (minus * num);
 }
-int main(void)
-{
-	    int nb;
-
-	        nb = _atoi("2147483647");
-		    printf("%d\n", nb);
-		    nb = _atoi("-2147483648");
-		                        printf("%d\n", nb);
-		      return (0);
-}
