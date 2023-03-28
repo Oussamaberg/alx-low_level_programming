@@ -29,10 +29,21 @@ int _atoi(char *s)
 		i++;
 	}
 	i--;
-	for (; i >= start; i--)
-	{
-		num = num + (s[i] - '0') * n;
-		n = n * 10;
-	}
+	if (flag == 1)
+		for (; i >= start; i--)
+		{
+			num = num + (s[i] - '0') * n;
+			n = n * 10;
+		}
 	return (minus * num);
+}
+int main(void)
+{
+	    int nb;
+
+	        nb = _atoi("2147483647");
+		    printf("%d\n", nb);
+		    nb = _atoi("-2147483648");
+		                        printf("%d\n", nb);
+		      return (0);
 }
