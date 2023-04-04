@@ -15,12 +15,12 @@ char *_strstr(char *haystack, char *needle)
 	int hay_len = strlen(haystack);
 	int needle_len = strlen(needle);
 
-	for (; i <= hay_len; i++)
+	for (; i < hay_len; i++)
 	{
 		j = 0;
-		if (haystack[i] == needle[j] && (i + needle_len) <= hay_len)
+		if (haystack[i] == needle[j] && (i + needle_len) < hay_len)
 		{
-			for (; j <= needle_len; j++)
+			for (; j < needle_len; j++)
 			{
 				if (haystack[i + j] == needle[j])
 					index = i;
