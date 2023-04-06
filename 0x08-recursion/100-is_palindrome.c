@@ -18,11 +18,10 @@ int palindrome(char *s, char *s_end)
 		}
 		else
 		{
-			return (0);
+			return(0);
 		}
 	}
-	else
-		return (1);
+	return (1);
 }
 /**
  *  is_palindrome - returns 1 if a string is a palindrome and 0 if not.
