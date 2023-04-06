@@ -10,11 +10,15 @@
  */
 int palindrome(char *s, char *s_end)
 {
-	if (s_end > s)
+	if (*s == '\0')
+	{
+		return (1);
+	}
+	else if (s_end > s)
 	{
 		if (*s == *(s_end))
 		{
-			palindrome(s + 1, s_end - 1);
+			return (palindrome(s + 1, s_end - 1));
 		}
 		else
 		{
@@ -22,8 +26,9 @@ int palindrome(char *s, char *s_end)
 		}
 	}
 	else
+	{
 		return (1);
-	return (0);
+	}
 }
 /**
  *  is_palindrome - returns 1 if a string is a palindrome and 0 if not.
@@ -36,5 +41,5 @@ int is_palindrome(char *s)
 	char *s_end;
 
 	s_end = s + strlen(s) - 1;
-		return (palindrome(s, s_end));
+	return (palindrome(s, s_end));
 }
