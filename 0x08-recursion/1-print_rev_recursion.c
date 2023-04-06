@@ -1,21 +1,18 @@
 #include<stdio.h>
-#include<string.h>
 
 /**
- * _puts_recursion - prints a string, followed by a new line.
- * @s: a string.
- * Return: Void.
+ * _print_rev_recursion - Prints a string in reverse
+ * @s: string
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
-int _strlen_recursion(char *s);
+void _print_rev_recursion(char *s)
 {
-	char *a;
-	a = (s + strlen(s) - 1);
-	if (*(a) != '\n')
+	if (*s != '\0')
 	{
-		putchar(*(a));
-		s--;
-		_print_rev_recursion(s);
+	_print_rev_recursion(s + 1);
+	putchar(*s);
 	}
-	
 }
+
