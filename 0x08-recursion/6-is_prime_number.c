@@ -22,8 +22,8 @@ int prime(int a, int b)
 			return (0);
 		}
 	}
-	else
-		return (2);
+	
+	return (1);
 }
 /**
  * is_prime_number - returns 1 if n is a prime number.
