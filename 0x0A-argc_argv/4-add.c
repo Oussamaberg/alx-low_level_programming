@@ -11,7 +11,7 @@ int isnumber(char *s)
 	int i = 0;
 	int flag = 1;
 
-	while (s[i] != '0')
+	while (s[i] != '\0')
 	{
 		if (s[i] < '0' || s[i] > '9')
 		{
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		printf("0\n");
 	else
 	{
-		for (i = 0; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
 			if (isnumber(argv[i]) != 0)
 				sum = sum + atoi(argv[i]);
