@@ -5,11 +5,12 @@
 void free_memo(int n,int **arr)
 {
 	int i = 0;
-	while(i <= n)
+	while(i < n)
 	{
 		free(arr[i]);
 		i++;
 	}
+	free(arr);
 }
 /**
  * alloc_grid - returns a pointer to a 2
