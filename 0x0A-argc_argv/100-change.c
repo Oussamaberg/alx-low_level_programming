@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int coin[5] = {25, 10, 5, 2, 1};
-	int cents = atoi(argv[1]);
+	int cents;
 	int i = 0;
 	int coin_number = 0;
 
@@ -19,7 +19,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	else if (atoi(argv[1]) < 0)
+	cents = atoi(argv[1]);
+	if (cents < 0)
 		printf("0\n");
 	else
 	{
@@ -33,7 +34,7 @@ int main(int argc, char *argv[])
 			else
 				i++;
 		}
-	}
 	printf("%d\n",  coin_number);
+	}
 	return (0);
 }
