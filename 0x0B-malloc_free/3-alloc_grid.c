@@ -1,6 +1,16 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+
+void free_memo(int n,int **arr)
+{
+	int i = 0;
+	while(i < n)
+	{
+		free(arr[i]);
+		i++;
+	}
+}
 /**
  * alloc_grid - returns a pointer to a 2
  * dimensional array of integers.
@@ -25,8 +35,8 @@ int **alloc_grid(int width, int height)
 		arr[i] = (int *)malloc(width * sizeof(int));
 		if (arr[i] == NULL)
 		{
+			free_memo(i, arr);
 			return (NULL);
-			free(arr);
 		}
 
 		for (j = 0; j < width; j++)
