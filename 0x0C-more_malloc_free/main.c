@@ -11,8 +11,12 @@ int main(void)
 {
 	    char *concat;
 
-	        concat = string_nconcat(NULL, "School !!!", 6);
-		    printf("%s\n", concat);
+	        concat = string_nconcat(NULL, "Schoolllll !!!", 26);
+		printf("%s\n", concat);
+		concat = string_nconcat(NULL, NULL, 6);
+		printf("%s\n", concat);
+		concat = string_nconcat("  ", "School !!!", 10);
+		printf("%s\n", concat);
 		        free(concat);
 			    return (0);
 }
