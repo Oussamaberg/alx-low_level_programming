@@ -9,6 +9,6 @@
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	*(p).name = name;
-	*(p).name = age;
-	*(p).name = owner;
+	*(p).age = age;
+	*(p).owner = owner;
 }
