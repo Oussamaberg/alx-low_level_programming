@@ -3,17 +3,19 @@
 #include <stdlib.h>
 
 /**
- * print_name - prints a name
- * @name: name to print
- * @f: pointer to the function print_name
+ * array_iterator - executes a function given as a
+ * parameter on each element of an array
+ * @array: array to iterate over
+ * @size: size of the array
+ * @action: pointer to the function array_iterator
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	size_t i;
 
-	if (!array || !action || size <= 0)
+	if (!array || !action)
 		return;
-	for(i = 0; i < size; i++)		
-	(*action)(array[1]);
+	for (i = 0; i < size; i++)
+		(*action)(array[i]);
 }
