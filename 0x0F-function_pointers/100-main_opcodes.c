@@ -1,41 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <udis86.h>
-
 /**
-  * main - ...
-  * @argc: ...
-  * @argv: ...
-  *
-  * Return: ...
-  */
-int main(int argc, char *argv[])
+ * main - generates opcodes.
+ * @argc: argument counter.
+ * @argv: argument vector.
+ * Return: the opcodes
+ */
+int main(int argc, char **argv)
 {
-	ud_t ud_obj;
-	int val = 0, i = 0;
+	int i, number;
 
-	if (argc == 2)
+	if (argc != 2)
 	{
-		val = atoi(argv[1]);
-
-		if (val < 0)
-		{
-			printf("Error\n");
-			exit(2);
-		}
-
-		ud_unit(&ud_obj);
-		ud_set_input_buffer(&ud_obj, argv[1], val);
-		ud_set_mode(&ud_obj, 64);
-		ud_set_syntax(&ud_obj, UD_SYN_INTEL);
-
-		while (ud_disassemble(&ud_obj))
-		{
-			printf("\t%s\n", ud_insn_hex(&ud_obj));
-		}
+		printf("Error\n");
+		return (1);
+	}
+	number = atoi(argv[1]);
+	if (number < 0)
+	{
+		printf("Error\n");
+		exit(2);
 	}
 
+	for (i = 0; i < number; i++)
+	{
+		printf("%02hhx", ((char *)main)[i]);
+		if (i == (number - 1))
+			printf("\n");
+		else
+			printf(" ");
+	}
 	return (0);
 }
-
 
