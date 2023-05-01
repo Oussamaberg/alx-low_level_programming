@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * print_listint - Prints all the elements of a list_t list.
+ * listint_len - Return the number of elements of a list_t list.
  * @h: The list_t list.
  *
  * Return: The number of nodes in h.
