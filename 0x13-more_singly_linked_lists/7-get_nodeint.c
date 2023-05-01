@@ -2,22 +2,25 @@
 #include "lists.h"
 
 /**
- * print_listint - Prints all the elements of a list_t list.
- * @h: The list_t list.
- *
- * Return: The number of nodes in h.
+ * get_nodeint_at_index - Prints an element by index.
+ * @head: The list_t list.
+ * @index: index.
+ * Return:an elemen.
  */
 
-size_t print_listint(const listint_t *h)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	size_t counter = 0;
 
-	while (h)
+	while (head)
 	{
-		printf("%d\n", h->n);
+		if (index == counter)
+		{
+			return (head);
+		}
 		counter++;
-		h = h->next;
+		head = head->next;
 	}
-	return (counter);
+	return (NULL);
 
 }
