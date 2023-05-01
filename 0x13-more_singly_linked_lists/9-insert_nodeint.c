@@ -8,37 +8,37 @@
  * @n: int.
  * Return:an element.
  */
-
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int index = 0;
+	unsigned int i;
 	listint_t *new;
-	listint_t *element;
+	listint_t *temp = *head;
 
-	element = *head;
 	new = malloc(sizeof(listint_t));
-	if (!new || !head || !*head)
-	{
+	if (!new || !head)
 		return (NULL);
-	}
+
+	new->n = n;
+	new->next = NULL;
+
 	if (idx == 0)
 	{
 		new->next = *head;
 		*head = new;
 		return (new);
 	}
-	while (element)
+
+	for (i = 0; temp && i < idx; i++)
 	{
-		if (index == (idx - 1))
+		if (i == idx - 1)
 		{
-			new->n = n;
-			new->next = element->next;
-			element->next = new;
+			new->next = temp->next;
+			temp->next = new;
 			return (new);
 		}
-		index++;
-		element = element->next;
+		else
+			temp = temp->next;
 	}
-	return (NULL);
 
+	return (NULL);
 }
