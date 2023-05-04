@@ -1,30 +1,29 @@
-#include<stdio.h>
-#include<string.h>
+#include "main.h"
+#include <stdio.h>
 
 /**
- * print_binary - a function that converts a decimal to binary
- *
- * @n: decimal number to convert
- *
- * Return: nothing
-*/
-
+ * print_binary - print binary representation of a number
+ * @n: decimal number to print as binary
+ */
 void print_binary(unsigned long int n)
 {
-	int i;
-	char  bits[32];
-	
+	unsigned long int temp;
+	int shifts;
+
 	if (n == 0)
-		printf("0\n");
-	for (i = 0; n >= 1; i++)
 	{
-		bits[i] = n % 2 + '0';
-		n /= 2;
+		printf("0");
+		return;
 	}
-	bits[i] = '\0';
-	for (i = strlen(bits); i >= 0; i--)
+
+	for (temp = n, shifts = 0; (temp >>= 1) > 0; shifts++)
+		;
+
+	for (; shifts >= 0; shifts--)
 	{
-		printf("%c", bits[i]);
+		if ((n >> shifts) & 1)
+			printf("1");
+		else
+			printf("0");
 	}
-	printf("\n");
 }
