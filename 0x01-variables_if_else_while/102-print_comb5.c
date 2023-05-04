@@ -16,29 +16,9 @@ int main(void)
 
 	for (i = 48; i < 58; i++)
 	{
-		for (j = 48; j < 58; j++)
+		for (j = 0; j < 98; j++)
 		{
-			for (l = 48; l < 58; l++)
-			{
-				for (m = 48; m < 58; m++)
-				{
-					if ((i * 10 + j) < (l * 10 + m))
-					{
-						putchar(i);
-						putchar(j);
-						putchar(' ');
-						putchar(l);
-						putchar(m);
-						if (i == 57 && j == 56)
-							putchar('\n');
-						else
-						{
-							putchar(',');
-							putchar(' ');
-						}
-					}
-				}
-			}
+			putchar(j + '0');
 		}
 	}
 

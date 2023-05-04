@@ -13,7 +13,9 @@ void print_binary(unsigned long int n)
 {
 	int i;
 	char  bits[32];
-
+	
+	if (n == 0)
+		printf("0\n");
 	for (i = 0; n >= 1; i++)
 	{
 		bits[i] = n % 2 + '0';
