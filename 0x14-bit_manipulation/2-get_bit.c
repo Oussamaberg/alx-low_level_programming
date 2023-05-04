@@ -13,7 +13,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	char bits[32];
 
 	if (n == 0)
-		return ('0');
+		return (0);
 	for (i = 0; n >= 1; i++)
 	{
 		bits[i] = n % 2 + '0';
@@ -21,6 +21,6 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 	bits[i] = '\0';
 	if (strlen(bits) - 1 < index)
-		return ('0');
+		return (0);
 	return (bits[index] - '0');
 }
